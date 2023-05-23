@@ -5,4 +5,3 @@ for i in range(n):
     if i%2==0:
         s=s+l[i]
 print(s)
-
