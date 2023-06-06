@@ -1,17 +1,17 @@
-T = int(input())
-for _ in range(T):
-    N = int(input())
+n = int(input())
+for i in range(n):
+    a = int(input())
     arr = list(map(int, input().split()))
     left = 0
-    right = N - 1
+    right = a - 1
     max_val = arr[right] + 1 
-    for _ in range(N):
-        if _ % 2 == 0:
-            arr[_] += (arr[right] % max_val) * max_val
+    for i in range(a):
+        if i % 2 == 0:
+            arr[i] += (arr[right] % max_val) * max_val
             right -= 1
         else:
-            arr[_] += (arr[left] % max_val) * max_val
+            arr[i] += (arr[left] % max_val) * max_val
             left += 1
-    for _ in range(N):
-        arr[_] = arr[_] // max_val
+    for i in range(a):
+        arr[i] = arr[i] // max_val
     print(*arr)
