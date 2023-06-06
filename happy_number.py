@@ -1,13 +1,13 @@
-n=int(input())
-while n:
-    s=0
-    while n:
-        s=s+(n%10)**2
-        n=n//10
-    n=s
-    if n<10:
-        break
-if n==1 or n==7:
+def h(n):
+    s = set()
+    while n != 1:
+        if n in s:
+            return False 
+        s.add(n)
+        n = sum(int(digit) ** 2 for digit in str(n))
+    return True
+num = int(input())
+if h(num):
     print("True")
 else:
     print("False")
